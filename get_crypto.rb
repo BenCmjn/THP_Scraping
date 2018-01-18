@@ -16,6 +16,8 @@ def get_all_cryptos
 	end #Très bien. Donne-moi LA TAILLE cette p***** de liste
 	return crypto_list.length
 end # Merci, tu as fait du très bon travail
+
+
 #----------------------------------
 #Méthode pour récupérer les Noms de cryptos :
 def get_crypto_name(x)
@@ -32,9 +34,10 @@ def get_crypto_name(x)
 	 return name_list[0..x]
 end # Merci, tu as fait du très bon travail
 
+
 #----------------------------------
 #Méthode pour récupérer les prix :
-def get_crypto_price()
+def get_crypto_price(x)
 	# Hey Nokogiri, va sur la page de coinmarketcap.com où y'a toutes les datas
 	page = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
 	# Je prépare un tableau de prix pour les cryptos, vide pour l'instant
@@ -43,14 +46,9 @@ def get_crypto_price()
 	page.xpath('//a[@class="price"]').each do |price|
 		# Pour chaque nom, on va les rajouter dans mon tableau
 		price_list << price.text
-		# T'en as trouvé combien ?
-		price_list.length
 	end
 	# Fini ? Donne-moi cette p***** de liste
-	#return price_list[]
-
-	#OU Donne-moi LA TAILLE cette p***** de liste
-	return price_list.length
+	return price_list[0..x]
 end # Merci, tu as fait du très bon travail
 
 
@@ -62,13 +60,21 @@ end # Merci, tu as fait du très bon travail
 
 
 # DÉMARRAGE DU PROGRAMME !!!!!
-puts "Hello! Je suis sur ce site de blog chienne… \n …attend, je regarde combien il y a de crypto à pécho…"
+puts "Hello! Je suis sur ce site de blog chienne…
+	\n …attend, je regarde combien il y a de crypto à pécho…"
 # Combien y a t'il de cryptos à afficher ?
-puts "Il y en a #{get_all_cryptos} à afficher ! \n …attend un peu mon ami…"
+puts "Il y en a #{get_all_cryptos} à afficher !
+	\n …attend un peu mon ami je vais te donner leurs prix…"
+# Quels sont leurs noms ?
+num = get_all_cryptos
+puts get_crypto_name(num)
+
+# h = get_crypto_name.zip(get_crypto_price).to_h
 
 
 
-#h = a.zip(b).to_h
+
+
 
 
 
