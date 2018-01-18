@@ -60,6 +60,9 @@ end # Merci, tu as fait du très bon travail
 
 
 # DÉMARRAGE DU PROGRAMME !!!!!
+
+#Début de la boucle :
+loop {
 puts "Hello! Je suis sur ce site de blog chienne…
 	\n …attend, je regarde combien il y a de crypto à pécho…"
 # Combien y a t'il de cryptos à afficher ?
@@ -75,9 +78,13 @@ h = get_crypto_name(num).zip(get_crypto_price(num)).to_h
 
 # Affichons le :
 puts h
+# Voilà, soyons fier de nous mon petit Nokogiri :
+puts "\n Voilà, je reviens dans une heure…
+	\n (Tu peux faire ctrl+C pour quitter)"
+#Faisons une pause et recommeçons dans une heure (3600 sec) :
+sleep(3600)
 
-# Recommeçons dans une heure :
-
+}# Fin de la boucle
 
 
 
