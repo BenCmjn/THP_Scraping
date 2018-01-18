@@ -67,9 +67,10 @@ puts "Il y en a #{get_all_cryptos} à afficher !
 	\n …attend un peu mon ami je vais te donner leurs prix…"
 # Quels sont leurs noms ?
 num = get_all_cryptos
-puts get_crypto_name(num)
 
-# h = get_crypto_name.zip(get_crypto_price).to_h
+h = get_crypto_name(num).zip(get_crypto_price(num)).to_h
+
+puts h
 
 
 
