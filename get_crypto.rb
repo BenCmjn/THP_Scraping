@@ -65,13 +65,18 @@ puts "Hello! Je suis sur ce site de blog chienne…
 # Combien y a t'il de cryptos à afficher ?
 puts "Il y en a #{get_all_cryptos} à afficher !
 	\n …attend un peu mon ami je vais te donner leurs prix…"
-# Quels sont leurs noms ?
+
+# On va mettre le nombre total des cryptos chopés dans "num"
 num = get_all_cryptos
 
+# On va prendre les noms d'un coté, et les prix de l'autre,
+# et on va en faire un HASH (.to_h) :
 h = get_crypto_name(num).zip(get_crypto_price(num)).to_h
 
+# Affichons le :
 puts h
 
+# Recommeçons dans une heure :
 
 
 
